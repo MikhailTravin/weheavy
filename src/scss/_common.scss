@@ -1,0 +1,63 @@
+body {
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  .lock & {
+    overflow: hidden;
+    padding: 0px 0px 0px 0px !important;
+  }
+  &.hide-scrollbar {
+    margin: 0px 0px 0px 0px !important;
+  }
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+fieldset,
+fieldset legend {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  outline: none;
+  color: currentcolor;
+}
+
+.btn {
+  font-family: var(--third-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #f43939;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  min-height: 60px;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
+}

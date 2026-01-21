@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Главная страница</title>
+	{% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+	<div class="main-wrapper-outer">
+		{% include 'blocks/header.njk' %}
+		<main class="main">
+
+			<section class="block-intro">
+				<video width="100%" height="100%" id="video" autoplay loop muted playsinline>
+					<source src="files/videos/video.mp4" type="video/mp4">
+				</video>
+				<div class="container">
+					<div class="block-intro__content">
+						<h1 class="title1">
+							<span>Лучшие тракторы с завода для вас</span>
+							<br>
+							за разумные деньги
+						</h1>
+						<div class="block-intro__subtitle">
+							пройдите тест, и мы пришлем персональную подборку
+						</div>
+						<a href="./" data-popup="#choose" class="btn">Подобрать трактор</a>
+					</div>
+				</div>
+				<div class="block-intro-brands">
+					<div class="block-intro-brands__slider"></div>
+				</div>
+			</section>
+
+			<div class="telegram">
+				<a href="./" class="telegram__message" target="_blank">
+					<svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M6.191 17.6449C14.7792 13.8465 20.4964 11.3227 23.3673 10.0982C31.5384 6.62473 33.256 6.02499 34.3602 6C34.6056 6 35.1454 6.04998 35.5135 6.34985C35.8079 6.59974 35.8815 6.92459 35.9306 7.17448C35.9797 7.42437 36.0287 7.94914 35.9797 8.34897C35.538 13.0969 33.6241 24.6168 32.6426 29.9145C32.2254 32.1635 31.4157 32.9132 30.6305 32.9881C28.9128 33.1381 27.6123 31.8386 25.9683 30.7391C23.3673 29.0149 21.9196 27.9403 19.3922 26.2411C16.4723 24.292 18.3617 23.2174 20.0302 21.4682C20.4719 21.0184 28.0049 14.0215 28.1522 13.3967C28.1767 13.3218 28.1767 13.0219 28.0049 12.872C27.8332 12.722 27.5878 12.772 27.3915 12.822C27.1216 12.872 22.9993 15.6707 14.9755 21.1933C13.7977 22.018 12.7425 22.4178 11.7856 22.3928C10.7305 22.3678 8.71837 21.7931 7.19704 21.2933C5.35672 20.6935 3.88446 20.3687 4.00715 19.3191C4.08076 18.7694 4.81689 18.2196 6.191 17.6449Z"
+							fill="white"></path>
+					</svg>
+					<div class="telegram__cube telegram__cube_first"></div>
+					<div class="telegram__cube telegram__cube_second"></div>
+					<div class="telegram__cube telegram__cube_third"></div>
+				</a>
+			</div>
+
+		</main>
+		{% include 'blocks/footer.njk' %}
+	</div>
+	<div id="call" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div data-close class="popup__close">
+					<img loading="lazy" src="img/close.svg" alt="">
+				</div>
+				<div class="popup__body">
+					<div class="popup__top">
+						<div class="popup__title">
+							Проконсультируем по любому вашему вопросу
+						</div>
+						<p>
+							Заполните контактные данные. Специалист отдела продаж свяжется с вами в течение дня,
+							проконсультирует вас и ответит на любые вопросы
+						</p>
+					</div>
+					<form action="#" class="form">
+						<div class="form__inputs">
+							<div class="form__input">
+								<label for="name">Введите ваше имя</label>
+								<input id="name" data-required autocomplete="off" type="text" name="form[]"
+									placeholder="Имя">
+							</div>
+							<div class="form__input">
+								<label for="tel">Введите ваш номер телефона</label>
+								<input id="tel" data-required autocomplete="off" type="text" name="form[]"
+									placeholder="+7 (___) ___-__-__" class="telephone">
+							</div>
+						</div>
+						<button type="submit" class="btn">
+							Отправить заявку
+						</button>
+						<div class="form__text">
+							Нажимая на кнопку, вы даете согласие на обработку <a href="./"> персональных данных </a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% include 'blocks/scripts.njk' %}
+</body>
+
+</html>
