@@ -996,3 +996,48 @@ if (document.querySelector('.block-quiz__slider')) {
         });
     }
 }
+
+if (document.querySelector('.block-intro-brands__slider')) {
+    const slider = document.querySelector('.block-intro-brands__slider');
+    const wrapper = document.querySelector('.block-intro-brands__wrapper');
+    const slides = document.querySelectorAll('.block-intro-brands__slide');
+
+    for (let i = 0; i < 6; i++) {
+        const clones = [];
+
+        slides.forEach(slide => {
+            const clone = slide.cloneNode(true);
+            clones.push(clone);
+        });
+
+        clones.forEach(clone => {
+            wrapper.appendChild(clone);
+        });
+    }
+
+    let position = 0;
+    let animationId;
+    const speed = 0.5;
+
+    function animate() {
+        position -= speed;
+
+        const wrapperWidth = wrapper.scrollWidth / 2;
+        if (Math.abs(position) >= wrapperWidth) {
+            position = 0;
+        }
+
+        wrapper.style.transform = `translateX(${position}px)`;
+        animationId = requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    slider.addEventListener('mouseenter', () => {
+        cancelAnimationFrame(animationId);
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        animate();
+    });
+}
